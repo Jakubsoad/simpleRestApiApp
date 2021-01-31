@@ -6,7 +6,6 @@ namespace App\Manager;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMException;
 use Exception;
 
@@ -19,17 +18,13 @@ class UserManager
     /** @var UserRepository  */
     private $userRepository;
 
-    /** @var EntityManager */
-    private $em;
-
     /**
      * UserManager constructor.
      * @param UserRepository $userRepository
      */
-    public function __construct(UserRepository $userRepository, EntityManager $em)
+    public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
-        $this->em = $em;
     }
 
     /**

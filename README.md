@@ -10,7 +10,7 @@ Zwraca użytkownika o danym ID
 Dodaje użytkownika do bazy na podstawie 2 wymaganych parametrów:
 name i surname
 
-Instrukcja uruchomienia (wymagany jest zainstalowany Docker):
+Instrukcja uruchomienia (wymagany jest zainstalowany Docker, composer i pakiet PHP):
 1. Pobierz repozytorium i przejdź do folderu z projektem
 2. Uruchom serwer bazy danych:
    ```console
@@ -27,7 +27,11 @@ Instrukcja uruchomienia (wymagany jest zainstalowany Docker):
     ```console
     psql -U postgres -h 127.0.0.1 simple_rest_api_db < db-data/simple_rest_api_db.sql
     ```
-5. Uruchom serwer PHP (jeżeli mamy pakiet php dostępny z poziomu terminala): 
+5. Zainstaluj zależności:
+    ```console
+    composer install
+    ```
+6. Uruchom serwer PHP (jeżeli mamy pakiet php dostępny z poziomu terminala): 
     ```console
     php -S localhost:8000 -t public/
     ```
