@@ -1,0 +1,9 @@
+# Read the documentation: https://symfony.com/doc/master/bundles/FOSRestBundle/index.html
+fos_rest:
+    param_fetcher_listener: true
+    format_listener:
+        enabled: true
+        rules:
+          - { path: '^/', priorities: ['json', 'xml'], fallback_format: 'html' }
+    versioning: true
+    body_listener: true

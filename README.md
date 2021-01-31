@@ -31,7 +31,8 @@ Instrukcja uruchomienia (wymagany jest zainstalowany Docker, composer i pakiet P
     ```console
     composer install
     ```
-6. Uruchom serwer PHP (jeżeli mamy pakiet php dostępny z poziomu terminala): 
+6. Skopiuj plik .env jako .env.local
+7. Uruchom serwer PHP (jeżeli mamy pakiet php dostępny z poziomu terminala): 
     ```console
     php -S localhost:8000 -t public/
     ```
