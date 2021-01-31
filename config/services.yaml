@@ -24,6 +24,7 @@ services:
     App\Manager\UserManager:
         arguments:
             - '@App\Repository\UserRepository'
+            - '@Doctrine\ORM\EntityManagerInterface'
 
     App\Controller\UserApiController:
         arguments:
