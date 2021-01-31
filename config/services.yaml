@@ -21,6 +21,15 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
+    App\Manager\UserManager:
+        arguments:
+            - '@App\Repository\UserRepository'
+            - '@Doctrine\ORM\EntityManagerInterface'
+
+    App\Controller\UserApiController:
+        arguments:
+            - '@App\Manager\UserManager'
+
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
