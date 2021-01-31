@@ -36,4 +36,4 @@ Instrukcja uruchomienia (wymagany jest zainstalowany Docker, composer i pakiet P
     ```console
     php -S localhost:8000 -t public/
     ```
-Aplikacja jest gotowa.
+Aplikacja jest gotowa. Można testować ją np. za pomocą Postmana, ponieważ nie posiada warstwy graficznej. 
