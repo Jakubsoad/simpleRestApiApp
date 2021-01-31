@@ -34,10 +34,17 @@ class UserManager
 
     /**
      * @return User[]|array
+     * @throws Exception
      */
     public function getAllUsers()
     {
-        return $this->userRepository->findAll();
+        $users = $this->userRepository->getAllUsersArray();
+
+        if ($users === []) {
+            throw new Exception('W bazie nie ma żadnego użytkownika!');
+        }
+
+        return $users;
     }
 
     /**
@@ -59,6 +66,17 @@ class UserManager
             //JTD
             throw $e;
         }
+    }
+
+    /**
+     * @param $id
+     * @throws Exception
+     *
+     * @return User
+     */
+    public function getUserById($id)
+    {
+        return $this->userRepository->findOneArr($id);
     }
 
 }

@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Manager\UserManager;
 use Doctrine\ORM\ORMException;
+use Exception;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcher;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -33,10 +35,24 @@ class UserApiController extends AbstractFOSRestController
      * @Rest\Get("/users")
      *
      * @return JsonResponse
+     * @throws Exception
      */
     public function getAllUsers()
     {
         return new JsonResponse($this->userManager->getAllUsers());
+    }
+
+    /**
+     * @Rest\Get("/user/{id}")
+     * @Rest\RequestParam(name="id", requirements="\d+", description="ID of user")
+     *
+     * @param int $id
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function getUserById(int $id)
+    {
+        return new JsonResponse($this->userManager->getUserById($id));
     }
 
     /**
