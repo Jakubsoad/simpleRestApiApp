@@ -11,7 +11,7 @@ Dodaje użytkownika do bazy na podstawie 2 wymaganych parametrów:
 name i surname
 
 Instrukcja uruchomienia (wymagany jest zainstalowany Docker):
-1. Przejdź do folderu z projektem
+1. Pobierz repozytorium i przejdź do folderu z projektem
 2. Uruchom serwer bazy danych:
    ```console
     docker run -d \
